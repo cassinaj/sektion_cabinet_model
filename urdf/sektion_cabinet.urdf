@@ -12,13 +12,13 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cabinet_model/meshes/sektion.stl"/>
+        <mesh filename="package://sektion_cabinet_model/meshes/sektion.stl"/>
       </geometry>
     </collision>
     <visual name="sektion_visual">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://cabinet_model/meshes/sektion.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://sektion_cabinet_model/meshes/sektion.stl" scale="1.0 1.0 1.0"/>
       </geometry>
       <material name="White" />
     </visual>
@@ -33,13 +33,13 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cabinet_model/meshes/drawer.stl"/>
+        <mesh filename="package://sektion_cabinet_model/meshes/drawer.stl"/>
       </geometry>
     </collision>
     <visual name="drawer_top_visual">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://cabinet_model/meshes/drawer.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://sektion_cabinet_model/meshes/drawer.stl" scale="1.0 1.0 1.0"/>
       </geometry>
       <material name="Grey" />
     </visual>
@@ -54,13 +54,13 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cabinet_model/meshes/drawer.stl"/>
+        <mesh filename="package://sektion_cabinet_model/meshes/drawer.stl"/>
       </geometry>
     </collision>
     <visual name="drawer_bottom_visual">
       <origin rpy="0  0  0" xyz="0  0  0"/>
       <geometry>
-        <mesh filename="package://cabinet_model/meshes/drawer.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://sektion_cabinet_model/meshes/drawer.stl" scale="1.0 1.0 1.0"/>
       </geometry>
       <material name="Grey" />
     </visual>
@@ -77,13 +77,13 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cabinet_model/meshes/drawer.stl"/>
+        <mesh filename="package://sektion_cabinet_model/meshes/drawer.stl"/>
       </geometry>
     </collision>
     <visual name="door_right_visual">
       <origin rpy="0  0  0" xyz="0  -0.184706  0"/>
       <geometry>
-        <mesh filename="package://cabinet_model/meshes/door.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://sektion_cabinet_model/meshes/door.stl" scale="1.0 1.0 1.0"/>
       </geometry>
       <material name="Grey" />
     </visual>
@@ -100,13 +100,13 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cabinet_model/meshes/drawer.stl"/>
+        <mesh filename="package://sektion_cabinet_model/meshes/drawer.stl"/>
       </geometry>
     </collision>
     <visual name="door_left_visual">
       <origin rpy="0  0  0" xyz="0  0.184706  0"/>
       <geometry>
-        <mesh filename="package://cabinet_model/meshes/door.stl" scale="1.0 1.0 1.0"/>
+        <mesh filename="package://sektion_cabinet_model/meshes/door.stl" scale="1.0 1.0 1.0"/>
       </geometry>
       <material name="Grey" />
     </visual>
