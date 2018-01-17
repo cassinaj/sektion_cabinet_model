@@ -1,0 +1,175 @@
+<?xml version="1.0"?>
+<robot name="cabinet_sektion">
+  <material name="White"><color rgba="0.85 0.85 0.85 1.0"/></material>
+  <material name="Grey"><color rgba="0.4 0.4 0.4 1.0"/></material>
+
+  <link name="sektion">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="10.0"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+    </inertial>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://cabinet_model/meshes/sektion.stl"/>
+      </geometry>
+    </collision>
+    <visual name="sektion_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://cabinet_model/meshes/sektion.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="White" />
+    </visual>
+  </link>
+
+  <link name="drawer_top">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+    </inertial>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://cabinet_model/meshes/drawer.stl"/>
+      </geometry>
+    </collision>
+    <visual name="drawer_top_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://cabinet_model/meshes/drawer.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Grey" />
+    </visual>
+  </link>
+
+  <link name="drawer_bottom">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+    </inertial>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://cabinet_model/meshes/drawer.stl"/>
+      </geometry>
+    </collision>
+    <visual name="drawer_bottom_visual">
+      <origin rpy="0  0  0" xyz="0  0  0"/>
+      <geometry>
+        <mesh filename="package://cabinet_model/meshes/drawer.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Grey" />
+    </visual>
+  </link>
+
+  <link name="door_right_anchor_link" />
+  <link name="door_right_joint_anchor_link" />
+  <link name="door_right_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+    </inertial>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://cabinet_model/meshes/drawer.stl"/>
+      </geometry>
+    </collision>
+    <visual name="door_right_visual">
+      <origin rpy="0  0  0" xyz="0  -0.184706  0"/>
+      <geometry>
+        <mesh filename="package://cabinet_model/meshes/door.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Grey" />
+    </visual>
+  </link>
+
+  <link name="door_left_anchor_link" />
+  <link name="door_left_joint_anchor_link" />
+  <link name="door_left_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="1.0"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+    </inertial>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://cabinet_model/meshes/drawer.stl"/>
+      </geometry>
+    </collision>
+    <visual name="door_left_visual">
+      <origin rpy="0  0  0" xyz="0  0.184706  0"/>
+      <geometry>
+        <mesh filename="package://cabinet_model/meshes/door.stl" scale="1.0 1.0 1.0"/>
+      </geometry>
+      <material name="Grey" />
+    </visual>
+  </link>
+
+
+  <joint name="door_right_joint_fixed" type="fixed">
+    <parent link="sektion"/>
+    <child link="door_right_anchor_link"/>
+    <origin xyz="0.3162 0.3757 -0.12973" rpy="0 0 0"/>
+  </joint>
+  <joint name="door_right_shift_joint" type="prismatic">
+    <parent link="door_right_anchor_link"/>
+    <child link="door_right_joint_anchor_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1000.0" lower="0" upper="-0.015" velocity="0.0"/>
+    <mimic joint="door_right_joint" multiplier="-0.009554" offset="0" />
+  </joint>
+  <joint name="door_right_joint" type="revolute">
+    <parent link="door_right_joint_anchor_link"/>
+    <child link="door_right_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="1000.0" lower="0" upper="1.57" velocity="0.1"/>
+  </joint>
+
+  <joint name="door_left_joint_fixed" type="fixed">
+    <parent link="sektion"/>
+    <child link="door_left_anchor_link"/>
+    <origin xyz="0.3162 -0.3757 -0.12973" rpy="0 0 0"/>
+  </joint>
+  <joint name="door_left_shift_joint" type="prismatic">
+    <parent link="door_left_anchor_link"/>
+    <child link="door_left_joint_anchor_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1000.0" lower="0" upper="-0.015" velocity="0.0"/>
+    <mimic joint="door_left_joint" multiplier="-0.009554" offset="0" />
+  </joint>
+  <joint name="door_left_joint" type="revolute">
+    <parent link="door_left_joint_anchor_link"/>
+    <child link="door_left_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="1000.0" lower="0" upper="-1.57" velocity="0.1"/>
+  </joint>
+
+
+  <joint name="drawer_top_joint" type="prismatic">
+    <parent link="sektion"/>
+    <child link="drawer_top"/>
+    <origin xyz="0.0515 0 0.3172" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="1000.0" lower="0.0" upper="0.4" velocity="0.1"/>
+  </joint>
+
+  <joint name="drawer_bottom_joint" type="prismatic">
+    <parent link="sektion"/>
+    <child link="drawer_bottom"/>
+    <origin xyz="0.0515 0 0.18795" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <limit effort="1000.0" lower="0.0" upper="0.4" velocity="0.0"/>
+  </joint>
+
+</robot>
