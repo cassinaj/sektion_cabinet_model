@@ -88,6 +88,7 @@
       <material name="Grey" />
     </visual>
   </link>
+  <link name="door_right" />
 
   <link name="door_left_anchor_link" />
   <link name="door_left_joint_anchor_link" />
@@ -111,7 +112,7 @@
       <material name="Grey" />
     </visual>
   </link>
-
+  <link name="door_left" />
 
   <joint name="door_right_joint_fixed" type="fixed">
     <parent link="sektion"/>
@@ -132,6 +133,12 @@
     <origin xyz="0 0 0" rpy="0 0 0"/>
     <axis xyz="0 0 1"/>
     <limit effort="1000.0" lower="0" upper="1.57" velocity="0.1"/>
+  </joint>
+  <joint name="door_right_transform" type="fixed">
+    <parent link="door_right_link"/>
+    <child link="door_right"/>
+    <origin xyz="0 -.181 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
   </joint>
 
   <joint name="door_left_joint_fixed" type="fixed">
@@ -154,7 +161,12 @@
     <axis xyz="0 0 1"/>
     <limit effort="1000.0" lower="0" upper="-1.57" velocity="0.1"/>
   </joint>
-
+  <joint name="door_left_transform" type="fixed">
+    <parent link="door_left_link"/>
+    <child link="door_left"/>
+    <origin xyz="0 .181 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
 
   <joint name="drawer_top_joint" type="prismatic">
     <parent link="sektion"/>

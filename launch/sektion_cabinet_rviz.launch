@@ -10,13 +10,23 @@
     if="$(arg gui)">
     <param name="use_gui" value="True"/>
   </node>
-  <node name="robot_state_publisher"
+  <!--
+  <node name="sektion_cabinet_state_publisher"
     pkg="robot_state_publisher"
     type="state_publisher"
-    if="$(arg gui)"/>
-
-  <node name="rviz" 
-      pkg="rviz" 
-      type="rviz" 
-      args="-d $(find sektion_cabinet_model)/config/sektion_cabinet_model.rviz"/>
+    if="$(arg gui)">
+  </node>
+  -->
+  <node name="sektion_cabinet_tracker_state_publisher"
+    pkg="robot_state_publisher"
+    type="state_publisher"
+    if="$(arg gui)">
+    <remap from="/tf" to="/tracker/tf"/>
+  </node>
+  <node name="sektion_cabinet_rviz" 
+    pkg="rviz" 
+    type="rviz" 
+    args="-d $(find sektion_cabinet_model)/config/sektion_cabinet_model.rviz">
+    <remap from="/tf" to="/tracker/tf"/>
+  </node>
 </launch>
