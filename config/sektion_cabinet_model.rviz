@@ -7,13 +7,8 @@ Panels:
         - /Global Options1
         - /Status1
         - /SektionCabinetModel1
-        - /SektionCabinetModel1/Links1
-        - /SektionCabinetModel1/Links1/door_left1
-        - /SektionCabinetModel1/Links1/door_right1
-        - /SektionCabinetModel1/Links1/drawer_bottom1
-        - /SektionCabinetModel1/Links1/drawer_top1
-        - /SektionCabinetModel1/Links1/sektion1
-      Splitter Ratio: 0.722222209
+        - /SektionCabinetModel1/Status1
+      Splitter Ratio: 0.505813956
     Tree Height: 565
   - Class: rviz/Selection
     Name: Selection
@@ -67,7 +62,7 @@ Visualization Manager:
         Link Tree Style: Links in Alphabetic Order
         door_left:
           Alpha: 1
-          Show Axes: true
+          Show Axes: false
           Show Trail: false
         door_left_anchor_link:
           Alpha: 1
@@ -84,7 +79,7 @@ Visualization Manager:
           Value: true
         door_right:
           Alpha: 1
-          Show Axes: true
+          Show Axes: false
           Show Trail: false
         door_right_anchor_link:
           Alpha: 1
@@ -101,23 +96,19 @@ Visualization Manager:
           Value: true
         drawer_bottom:
           Alpha: 1
-          Show Axes: true
+          Show Axes: false
           Show Trail: false
           Value: true
         drawer_top:
           Alpha: 1
-          Show Axes: true
+          Show Axes: false
           Show Trail: false
           Value: true
         sektion:
           Alpha: 1
-          Show Axes: true
-          Show Trail: false
-          Value: true
-        world:
-          Alpha: 1
           Show Axes: false
           Show Trail: false
+          Value: true
       Name: SektionCabinetModel
       Robot Description: robot_description
       TF Prefix: ""
@@ -127,7 +118,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: world
+    Fixed Frame: sektion
     Frame Rate: 30
   Name: root
   Tools:
@@ -163,10 +154,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.385398448
+      Pitch: 0.485398352
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.36858511
+      Yaw: 5.88358402
     Saved: ~
 Window Geometry:
   Displays:
@@ -184,5 +175,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 1322
-  X: 490
-  Y: 182
+  X: 2125
+  Y: 125
